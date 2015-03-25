@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=
+comment0.target=FRAME()
+comment0.text=\r\n\ Creates\ the\ initial\ frame\r\n
+comment1.params=event
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment1.text=\r\n\ This\ method\ is\ used\ to\ leave\ to\ initial\ frame\ to\ go\ to\ the\ actual\ gameboard,\ \r\n
+comment2.params=
+comment2.target=void\ makeFrame()
+comment3.params=
+comment3.target=void\ makeBoard()
+comment4.params=frame
+comment4.target=void\ makeMenuBar(javax.swing.JFrame)
+comment5.params=e
+comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment6.params=panel\ buttonText
+comment6.target=void\ addButton(java.awt.Container,\ java.lang.String)
+comment7.params=
+comment7.target=void\ quit()
+comment7.text=\r\n\ Quit\ function\:\ quit\ the\ application.\r\n
+numComments=8

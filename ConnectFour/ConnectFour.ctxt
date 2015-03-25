@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=board\ depth
+comment1.target=int\ max(Board,\ int)
+comment1.text=\r\n\ This\ method\ will\ be\ called\ upon\ the\ computer's\ turn\ to\ make\ a\ move.\ It\ will\ also\ recursively\ call\ and\ recursively\ be\ called\ by\ min().\ It\ is\r\n\ used\ to\ generate\ all\ the\ possible\ scenarios\ that\ the\ computer\ can\ place\ a\ chip\ and\ choose\ the\ one\ with\ the\ highest\ heuristic\ value.\r\n\ The\ compMove\ global\ variable\ will\ be\ changed\ to\ the\ computer's\ best\ next\ move\ by\ the\ end\ of\ the\ function.\r\n\ @param\ board\ The\ board\ to\ go\ off\ of\ when\ generating\ the\ next\ level\ of\ options\ for\ moves\r\n\ @param\ depth\ The\ depth\ of\ level\ of\ nodes\ left\ to\ generate\r\n\ @return\ The\ heuristic\ that\ has\ the\ highest\ value\ for\ the\ level\ of\ nodes\ at\ that\ time\r\n
+comment2.params=board\ depth
+comment2.target=int\ min(Board,\ int)
+comment2.text=\r\n\ This\ method\ will\ be\ recursively\ called\ by\ as\ well\ as\ recursively\ call\ max().\ It\ is\ used\ to\ generate\ all\ the\ possible\ scenarios\ that\ the\ player\ \r\n\ can\ place\ a\ chip\ and\ choose\ the\ one\ with\ the\ lowest\ heuristic\ value\ in\ an\ attempt\ to\ guess\ what\ the\ player\ would\ do\ in\ their\ best\ interest.\r\n\ @param\ board\ The\ board\ to\ go\ off\ of\ when\ generating\ the\ next\ level\ of\ options\ for\ moves\r\n\ @param\ depth\ The\ depth\ of\ level\ of\ nodes\ left\ to\ generate\r\n\ @return\ The\ heuristic\ that\ has\ the\ lowest\ value\ for\ the\ level\ of\ nodes\ at\ that\ time\r\n
+numComments=3
