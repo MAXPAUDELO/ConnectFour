@@ -27,13 +27,37 @@ public class FRAME implements ActionListener{
      */
     public void actionPerformed(ActionEvent event)
     {
-        String color = event.getActionCommand();
+        String buttonName = event.getActionCommand();
 
-        if(color.equals("Red") || color.equals("Black"))
+        if(buttonName.equals("Red") || buttonName.equals("Black"))
         {
             
             frame.setVisible(false);
             makeBoard();
+        }
+        else if(buttonName.equals("Row 1"))
+        {
+        	ConnectFour.number = "1";
+        }
+        else if(buttonName.equals("Row 2"))
+        {
+        	ConnectFour.number = "2";
+        }
+        else if(buttonName.equals("Row 3"))
+        {
+        	ConnectFour.number = "3";
+        }
+        else if(buttonName.equals("Row 4"))
+        {
+        	ConnectFour.number = "4";
+        }
+        else if(buttonName.equals("Row 5"))
+        {
+        	ConnectFour.number = "5";
+        }
+        else if(buttonName.equals("Row 6"))
+        {
+        	ConnectFour.number = "6";
         }
     }
 
@@ -68,18 +92,27 @@ public class FRAME implements ActionListener{
         makeMenuBar(frame);
 
         Container contentPane = frame.getContentPane();
+        JPanel bottomPanel = new JPanel();
+        JPanel rowPanel = new JPanel(new GridLayout(1,6));
 
         
-        ImageIcon icon = new ImageIcon("image/ConnectFourBackGround.png"); 
+        ImageIcon icon = new ImageIcon("src/image/ConnectFourBackGround.png"); 
         JLabel thumb = new JLabel();
         thumb.setIcon(icon);
         
         JLabel moves = new JLabel("Moves: " + numMoves);
         
+        addButton(rowPanel, "Row 1");
+        addButton(rowPanel, "Row 2");
+        addButton(rowPanel, "Row 3");
+        addButton(rowPanel, "Row 4");
+        addButton(rowPanel, "Row 5");
+        addButton(rowPanel, "Row 6");
         
         
-        
-        contentPane.add(moves, BorderLayout.SOUTH);
+        bottomPanel.add(rowPanel, BorderLayout.NORTH);
+        bottomPanel.add(moves, BorderLayout.SOUTH);
+        contentPane.add(bottomPanel, BorderLayout.SOUTH);
         contentPane.add(thumb, BorderLayout.CENTER);
         
         //   contentPane.add(imagePanel, BorderLayout.CENTER);

@@ -2,6 +2,7 @@
 public class Board {
 
     private int[][] graph;
+    private FRAME frame;
 
     /**
      * Constructor that initializes a Board with a 2-d array called graph that contains all 0s
@@ -9,6 +10,7 @@ public class Board {
     public Board()
     {
         graph = new int[6][7]; //row x column
+        frame = new FRAME();
     }
 
     /**
@@ -28,7 +30,7 @@ public class Board {
         else
             graph[i-1][column] = playerOrComp;
     }
-    
+
     /**
      * This method will remove the chip at the uppermost position of a certain column
      * @param column The column the remove the chip from
@@ -47,7 +49,7 @@ public class Board {
 
     /**
      * Will determine if the player has won or will determine if the computer has won
-     * depending on the corresponding paramter n
+     * depending on the corresponding parameter n
      * @param playerOrComp If it is a 1, it is checking to see if the player has won. 
      * If it is a 2, it is checking to see if the computer won
      * @return False if no winner, True if winner
@@ -55,7 +57,7 @@ public class Board {
     public boolean isWinner(int playerOrComp)
     {
         if(checkHorizontals(4,playerOrComp) + checkVerticals(4,playerOrComp) 
-            + checkDiagonals(4,playerOrComp) > 0)
+        + checkDiagonals(4,playerOrComp) > 0)
         {
             return true;
         }
@@ -91,39 +93,78 @@ public class Board {
 
         return 0;
     }
-    
+
     /**
      * This method will return the number of groups of chips 'in a row' in the vertical columns
      * @param numInRow Specifies the number of chips in a group to look for
-     * @param playerOrComp Specifies whether to look for player chips with a 1 or computer chips with a 2
+     * @param chip Specifies whether to look for player chips with a 1 or computer chips with a 2
      * @return The number of groups containing the specified amount of chips 'in a row'
      */
-    private int checkVerticals(int numInRow, int playerOrComp)
+    private int checkVerticals(int numInRow, int chip)
     {
-           return 0;
+        int groups = 0;
+        for(int i = 0; i<7; i++)
+        {
+            int sequence = 0;
+            for(int k = 0; k<6; k++)
+            {
+                if(graph[k][i] == chip)
+                {
+                    sequence++;
+                    if(sequence == numInRow)
+                    {
+                        groups++;
+                        sequence = 0;
+                    }
+
+                }
+                else
+                    sequence = 0;
+            }
+        }
+        return groups;
     }
-    
-     /**
+
+    /**
      * This method will return the number of groups of chips 'in a row' in the horizontal rows
      * @param numInRow Specifies the number of chips in a group to look for
-     * @param playerOrComp Specifies whether to look for player chips with a 1 or computer chips with a 2
+     * @param chip Specifies whether to look for player chips with a 1 or computer chips with a 2
      * @return The number of groups containing the specified amount of chips 'in a row'
      */
-    private int checkHorizontals(int numInRow, int playerOrComp)
+    private int checkHorizontals(int numInRow, int chip)
     {
-        return 0;
+        int groups = 0;
+        for(int i = 0; i<6; i++)
+        {
+            int sequence = 0;
+            for(int k = 0; k<7; k++)
+            {
+                if(graph[i][k] == chip)
+                {
+                    sequence++;
+                    if(sequence == numInRow)
+                    {
+                        groups++;
+                        sequence = 0;
+                    }
+
+                }
+                else
+                    sequence = 0;
+            }
+        }
+        return groups;
     }
-    
-     /**
+
+    /**
      * This method will return the number of groups of chips 'in a row' in the diagonals
      * @param numInRow Specifies the number of chips in a group to look for
-     * @param playerOrComp Specifies whether to look for player chips with a 1 or computer chips with a 2
+     * @param chip Specifies whether to look for player chips with a 1 or computer chips with a 2
      * @return The number of groups containing the specified amount of chips 'in a row'
      */
-    private int checkDiagonals(int numInRow, int playerOrComp)
+    private int checkDiagonals(int numInRow, int chip)
     {
         return 0;
     }
-    
 
 }

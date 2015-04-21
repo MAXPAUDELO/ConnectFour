@@ -3,13 +3,15 @@ import java.util.*;
 public class ConnectFour {
 
     private static Board mainBoard;
+    public static String number;
     private static BufferedReader stdin = new BufferedReader (new InputStreamReader(System.in));
     private static boolean done = false;
     private static int compMove; //global variable used to determine the best next position for the computer to place a chip
 
     public static void main(String[] args)throws IOException {
         mainBoard = new Board();
-        String number;
+
+
         while(!done)
         {
             number = stdin.readLine();
@@ -111,4 +113,8 @@ public class ConnectFour {
         return heuristic;
     }
 
+public void setNumber(String num)
+{
+	number = num;
+}
 }
